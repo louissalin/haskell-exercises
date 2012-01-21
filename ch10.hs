@@ -22,6 +22,7 @@ flip Mleft = Mright
 flip Mright = Mdown
 
 data Shape = Circle Float | Rect Float Float
+             deriving (Eq, Ord, Show, Read)
 
 square :: Float -> Shape
 square x = Rect x x
@@ -119,3 +120,9 @@ substs p = map (zip vs) (bools (length vs))
 
 isTaut :: Prop -> Bool
 isTaut p = and [eval s p | s <- substs p]
+
+-------------
+-- Classes --
+-------------
+
+
